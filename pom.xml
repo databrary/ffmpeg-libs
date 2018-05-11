@@ -1,0 +1,24 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>datavyu</groupId>
+  <artifactId>ffmpeg-libs</artifactId>
+  <version>0.4</version>
+  <build>
+     <resources>
+          <resource>
+              <!-- FFmpeg 3.4 version libraries -->
+              <directory>lib</directory>
+              <includes>
+                  <include>avcodec-57.dll</include>
+                  <include>avformat-57.dll</include>
+                  <include>avutil-55.dll</include>
+                  <include>swresample-2.dll</include>
+                  <include>swscale-4.dll</include>
+              </includes>
+          </resource>
+      </resources>
+  </build>
+</project>
