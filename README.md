@@ -26,7 +26,7 @@ and install it.
 
     Download `Win64.exe` from [link](http://yasm.tortall.net/Download.html) and rename
     the downloaded executable to `yasm.exe`. Create the folder `C:\yasm` and place the renamed file into 
-    this later. Add this folder to your path.
+    this latter. Add this folder to your path.
 
 5. Setup the environment variables for the 64 bit build
  
