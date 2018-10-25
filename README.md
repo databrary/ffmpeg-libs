@@ -85,13 +85,15 @@ and install it.
     ``` 
 10. A successful configuration ends with the lines
 
-    License: LGPL version 2.1 or later
-    Creating config.mak, config.h, and doc/config.texi...
-    config.asm is unchanged
-    libavutil/avconfig.h is unchanged
-    WARNING: pkg-config not found, library detection may fail.
-    libavcodec/bsf_list.c is unchanged
-    libavformat/protocol_list.c is unchanged
+    ```bash
+        License: LGPL version 2.1 or later
+        Creating config.mak, config.h, and doc/config.texi...
+        config.asm is unchanged
+        libavutil/avconfig.h is unchanged
+        WARNING: pkg-config not found, library detection may fail.
+        libavcodec/bsf_list.c is unchanged
+        libavformat/protocol_list.c is unchanged
+    ```
 
     You can ignore the pkg-config not found issue. It will not affect compilation.
 
