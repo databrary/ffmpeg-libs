@@ -24,7 +24,7 @@
     <build>
         <resources>
             <resource>
-                <!-- FFmpeg 4.0 libraries-->
+                <!-- FFmpeg 4.0.2 libraries Win 64bit & Mac 64bit -->
                 <directory>lib</directory>
                 <includes>
                     <include>avcodec-58.dll</include>
@@ -35,6 +35,14 @@
                     <include>postproc-55.dll</include>
                     <include>swresample-3.dll</include>
                     <include>swscale-5.dll</include>
+                    <include>libavcodec.58.dylib</include>
+                    <include>libavformat.58.dylib</include>
+                    <include>libavdevice.58.dylib</include>
+                    <include>libavfilter.7.dylib</include>
+                    <include>libavutil.56.dylib</include>
+                    <include>libpostproc.55.dylib</include>
+                    <include>libswresample.3.dylib</include>
+                    <include>libswscale.5.dylib</include>
                 </includes>
             </resource>
         </resources>
