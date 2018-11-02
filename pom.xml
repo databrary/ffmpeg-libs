@@ -5,7 +5,7 @@
 
     <groupId>datavyu</groupId>
     <artifactId>ffmpeg-libs</artifactId>
-    <version>0.5</version>
+    <version>0.6</version>
 
     <!-- Datavyu Distribution Management Repositories -->
     <distributionManagement>
