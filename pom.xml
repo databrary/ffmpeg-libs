@@ -3,9 +3,30 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>datavyu</groupId>
+    <groupId>org.datavyu</groupId>
     <artifactId>ffmpeg-libs</artifactId>
-    <version>0.5-SNAPSHOT</version>
+    <version>4.0.2</version>
+
+    <name>FFmpeg 4.0.2</name>
+    <description>FFmpeg 4.0.2 Libraries for Windows</description>
+    <url>https://github.com/databrary/ffmpeg-libs</url>
+
+    <issueManagement>
+        <url>https://github.com/databrary/ffmpeg-libs/issues</url>
+        <system>GitHub Issues</system>
+    </issueManagement>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 3.0</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0-standalone.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/databrary/ffmpeg-libs</url>
+    </scm>
 
     <!-- Datavyu Distribution Management Repositories -->
     <distributionManagement>
@@ -24,7 +45,7 @@
     <build>
         <resources>
             <resource>
-                <!-- FFmpeg 4.0 and SDL2 libraries-->
+                <!-- FFmpeg 4.0.2 libraries-->
                 <directory>lib</directory>
                 <includes>
                     <include>avcodec-58.dll</include>
@@ -35,7 +56,6 @@
                     <include>postproc-55.dll</include>
                     <include>swresample-3.dll</include>
                     <include>swscale-5.dll</include>
-                    <include>SDL2.dll</include>
                 </includes>
             </resource>
         </resources>
