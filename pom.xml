@@ -11,6 +11,11 @@
     <description>FFmpeg 4.0.2 Libraries for Windows</description>
     <url>https://github.com/databrary/ffmpeg-libs</url>
 
+    <properties>
+        <bintray.repo>datavyu/datavyu</bintray.repo>
+        <bintray.package>ffmpeg-libs</bintray.package>
+    </properties>
+
     <issueManagement>
         <url>https://github.com/databrary/ffmpeg-libs/issues</url>
         <system>GitHub Issues</system>
@@ -31,15 +36,10 @@
     <!-- Datavyu Distribution Management Repositories -->
     <distributionManagement>
         <repository>
-            <id>central</id>
-            <name>ip-10-0-0-114-releases</name>
-            <url>https://projects.databrary.org/artifactory/libs-release-local</url>
+            <id>bintray-datavyu-datavyu</id>
+            <name>datavyu-datavyu</name>
+            <url>https://api.bintray.com/maven/${bintray.repo}/${bintray.package};publish=1</url>
         </repository>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <name>ip-10-0-0-114-snapshots</name>
-            <url>https://projects.databrary.org/artifactory/libs-snapshot-local</url>
-        </snapshotRepository>
     </distributionManagement>
 
     <build>
