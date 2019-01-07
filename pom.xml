@@ -3,22 +3,43 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>datavyu</groupId>
+    <groupId>org.datavyu</groupId>
     <artifactId>ffmpeg-libs</artifactId>
-    <version>0.6</version>
+    <version>4.0.2</version>
+
+    <name>FFmpeg-libs 4.0.2</name>
+    <description>FFmpeg 4.0.2 Libraries for Windows</description>
+    <url>https://github.com/databrary/ffmpeg-libs</url>
+
+    <properties>
+        <bintray.repo>datavyu/datavyu</bintray.repo>
+        <bintray.package>ffmpeg-libs</bintray.package>
+    </properties>
+
+    <issueManagement>
+        <url>https://github.com/databrary/ffmpeg-libs/issues</url>
+        <system>GitHub Issues</system>
+    </issueManagement>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 3.0</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0-standalone.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/databrary/ffmpeg-libs</url>
+    </scm>
 
     <!-- Datavyu Distribution Management Repositories -->
     <distributionManagement>
         <repository>
-            <id>central</id>
-            <name>ip-10-0-0-114-releases</name>
-            <url>https://projects.databrary.org/artifactory/libs-release-local</url>
+            <id>bintray-datavyu-datavyu</id>
+            <name>datavyu-datavyu</name>
+            <url>https://api.bintray.com/maven/${bintray.repo}/${bintray.package};publish=1</url>
         </repository>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <name>ip-10-0-0-114-snapshots</name>
-            <url>https://projects.databrary.org/artifactory/libs-snapshot-local</url>
-        </snapshotRepository>
     </distributionManagement>
 
     <build>
