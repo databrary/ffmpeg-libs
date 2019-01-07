@@ -11,11 +11,6 @@
     <description>FFmpeg 4.0.2 Libraries for Windows</description>
     <url>https://github.com/databrary/ffmpeg-libs</url>
 
-    <properties>
-        <bintray.repo>datavyu/datavyu</bintray.repo>
-        <bintray.package>ffmpeg-libs</bintray.package>
-    </properties>
-
     <issueManagement>
         <url>https://github.com/databrary/ffmpeg-libs/issues</url>
         <system>GitHub Issues</system>
@@ -36,36 +31,88 @@
     <!-- Datavyu Distribution Management Repositories -->
     <distributionManagement>
         <repository>
-            <id>bintray-datavyu-datavyu</id>
-            <name>datavyu-datavyu</name>
-            <url>https://api.bintray.com/maven/${bintray.repo}/${bintray.package};publish=1</url>
+            <id>central</id>
+            <name>oss-jfrog-artifactory-releases</name>
+            <url>https://oss.jfrog.org/artifactory/oss-release-local</url>
         </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>oss-jfrog-artifactory-snapshots</name>
+            <url>https://oss.jfrog.org/artifactory/oss-snapshot-local</url>
+        </snapshotRepository>
     </distributionManagement>
 
-    <build>
-        <resources>
-            <resource>
-                <!-- FFmpeg 4.0.2 libraries Win 64bit & Mac 64bit -->
-                <directory>lib</directory>
-                <includes>
-                    <include>avcodec-58.dll</include>
-                    <include>avformat-58.dll</include>
-                    <include>avdevice-58.dll</include>
-                    <include>avfilter-7.dll</include>
-                    <include>avutil-56.dll</include>
-                    <include>postproc-55.dll</include>
-                    <include>swresample-3.dll</include>
-                    <include>swscale-5.dll</include>
-                    <include>libavcodec.58.dylib</include>
-                    <include>libavformat.58.dylib</include>
-                    <include>libavdevice.58.dylib</include>
-                    <include>libavfilter.7.dylib</include>
-                    <include>libavutil.56.dylib</include>
-                    <include>libpostproc.55.dylib</include>
-                    <include>libswresample.3.dylib</include>
-                    <include>libswscale.5.dylib</include>
-                </includes>
-            </resource>
-        </resources>
-    </build>
+    <profiles>
+        <profile>
+            <id>mac</id>
+            <activation>
+                <os>
+                    <name>Mac OS</name>
+                    <family>mac</family>
+                </os>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <configuration>
+                            <classifier>mac</classifier>
+                        </configuration>
+                    </plugin>
+                </plugins>
+                <resources>
+                    <resource>
+                        <!-- FFmpeg 4.0.2 libraries Mac 64bit -->
+                        <directory>lib</directory>
+                        <includes>
+                            <include>libavcodec.58.dylib</include>
+                            <include>libavformat.58.dylib</include>
+                            <include>libavdevice.58.dylib</include>
+                            <include>libavfilter.7.dylib</include>
+                            <include>libavutil.56.dylib</include>
+                            <include>libpostproc.55.dylib</include>
+                            <include>libswresample.3.dylib</include>
+                            <include>libswscale.5.dylib</include>
+                        </includes>
+                    </resource>
+                </resources>
+            </build>
+        </profile>
+
+        <profile>
+            <id>win-x64</id>
+            <activation>
+                <os>
+                    <name>Windows</name>
+                    <family>windows</family>
+                </os>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <configuration>
+                            <classifier>win</classifier>
+                        </configuration>
+                    </plugin>
+                </plugins>
+                <resources>
+                    <resource>
+                        <!-- FFmpeg 4.0.2 libraries Win 64bit -->
+                        <directory>lib</directory>
+                        <includes>
+                            <include>avcodec-58.dll</include>
+                            <include>avformat-58.dll</include>
+                            <include>avdevice-58.dll</include>
+                            <include>avfilter-7.dll</include>
+                            <include>avutil-56.dll</include>
+                            <include>postproc-55.dll</include>
+                            <include>swresample-3.dll</include>
+                            <include>swscale-5.dll</include>
+                        </includes>
+                    </resource>
+                </resources>
+            </build>
+        </profile>
+    </profiles>
 </project>
