@@ -5,10 +5,10 @@
 
     <groupId>org.datavyu</groupId>
     <artifactId>ffmpeg-libs</artifactId>
-    <version>4.0.2</version>
+    <version>4.1.1</version>
 
-    <name>FFmpeg-libs 4.0.2</name>
-    <description>FFmpeg 4.0.2 Libraries for Windows</description>
+    <name>FFmpeg-libs 4.1.1</name>
+    <description>FFmpeg 4.1.1 Libraries for Windows and Mac</description>
     <url>https://github.com/databrary/ffmpeg-libs</url>
 
     <properties>
@@ -41,11 +41,82 @@
             <url>https://api.bintray.com/maven/${bintray.repo}/${bintray.package};publish=1</url>
         </repository>
     </distributionManagement>
-
+    <profiles>
+        <profile>
+            <id>mac</id>
+            <activation>
+                <os>
+                    <name>Mac OS</name>
+                    <family>mac</family>
+                </os>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <configuration>
+                            <classifier>mac</classifier>
+                        </configuration>
+                    </plugin>
+                </plugins>
+                <resources>
+                    <resource>
+                        <!-- FFmpeg 4.1.1 libraries-->
+                        <directory>lib</directory>
+                        <includes>
+                            <include>avcodec.58.dylib</include>
+                            <include>avformat.58.dylib</include>
+                            <include>avdevice.58.dylib</include>
+                            <include>avfilter.7.dylib</include>
+                            <include>avutil.56.dylib</include>
+                            <include>postproc.55.dylib</include>
+                            <include>swresample.3.dylib</include>
+                            <include>swscale.5.dylib</include>
+                        </includes>
+                    </resource>
+                </resources>
+            </build>
+        </profile>
+        <profile>
+            <id>win-64</id>
+            <activation>
+                <os>
+                    <name>Windows</name>
+                    <family>windows</family>
+                </os>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <configuration>
+                            <classifier>win</classifier>
+                        </configuration>
+                    </plugin>
+                </plugins>
+                <resources>
+                    <resource>
+                        <!-- FFmpeg 4.1.1 libraries-->
+                        <directory>lib</directory>
+                        <includes>
+                            <include>avcodec-58.dll</include>
+                            <include>avformat-58.dll</include>
+                            <include>avdevice-58.dll</include>
+                            <include>avfilter-7.dll</include>
+                            <include>avutil-56.dll</include>
+                            <include>postproc-55.dll</include>
+                            <include>swresample-3.dll</include>
+                            <include>swscale-5.dll</include>
+                        </includes>
+                    </resource>
+                </resources>
+            </build>
+        </profile>
+    </profiles>
     <build>
         <resources>
             <resource>
-                <!-- FFmpeg 4.0.2 libraries-->
+                <!-- FFmpeg 4.1.1 libraries-->
                 <directory>lib</directory>
                 <includes>
                     <include>avcodec-58.dll</include>
