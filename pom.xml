@@ -33,7 +33,7 @@
         <repository>
             <id>bintray-datavyu-datavyu</id>
             <name>datavyu-datavyu</name>
-            <url>https://api.bintray.com/maven/datavyu/datavyu/ffmpeg-libs/;publish=1</url>
+            <url>https://api.bintray.com/maven/datavyu/datavyu/ffmpeg-libs</url>
         </repository>
     </distributionManagement>
     <profiles>
